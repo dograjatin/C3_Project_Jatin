@@ -20,22 +20,26 @@ public class Restaurant {
     public boolean isRestaurantOpen() {
 
         LocalTime currentTime = getCurrentTime();
-        boolean isOpened = currentTime.isAfter(openingTime);
-        boolean isNotClosed = currentTime.isBefore(closingTime);
 
-        if(isNotClosed && isOpened){
+        //Restaurant is opened means the opening time has past already
+        boolean isOpened = currentTime.isAfter(this.openingTime);
+
+        //Restaurant is not closed that means the closing time is yet to come.
+        boolean isNotClosed = currentTime.isBefore(this.closingTime);
+
+        //If restaurant has opened open and still not closed ths means its still open
+        if(isOpened && isNotClosed)
             return true;
-        }
+
         return false;
 
-        //DELETE ABOVE STATEMENT AND WRITE CODE HERE
     }
 
     public LocalTime getCurrentTime(){ return  LocalTime.now(); }
 
     public List<Item> getMenu() {
 
-        //the menu list
+        //Return the menu list
         return menu;
 
     }

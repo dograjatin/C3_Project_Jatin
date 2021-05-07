@@ -7,13 +7,11 @@ public class RestaurantService {
 
     public Restaurant findRestaurantByName(String restaurantName) throws restaurantNotFoundException {
 
-        //DELETE ABOVE STATEMENT AND WRITE CODE HERE
-        for(Restaurant searchedRestaurant : restaurants){
+       for(Restaurant searchedRestaurant : restaurants){
             if (searchedRestaurant.getName().equals(restaurantName)){
                 return searchedRestaurant;
             }
         }
-
         throw new restaurantNotFoundException(restaurantName);
     }
 

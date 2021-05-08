@@ -1,3 +1,4 @@
+import javax.lang.model.type.NullType;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -78,4 +79,7 @@ public class Restaurant {
         return name;
     }
 
+    public int getTotalOrderCost(String[] orderItems) {
+        return -1 ;
+    }
 }
